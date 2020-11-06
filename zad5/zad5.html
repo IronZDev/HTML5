@@ -1,0 +1,32 @@
+<html>
+<div id="pilka" class="circle"></div>
+<style>
+    body {
+        background-image: url('wir.jpeg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    #pilka {
+        background: #f00;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+	@keyframes spiral {
+		from {
+			transform: rotate(0deg) 
+		}
+		to {
+			transform: rotate(720deg) translate(calc(50vw - 256px), calc(50vh - 160px))
+		}
+	}
+</style>
+<script>
+    // Set initial position
+    document.getElementById("pilka").style.left = `${}`
+	//document.getElementById("obrazek").style.position = "absolute";
+	//document.getElementById("obrazek").style.animationName = "spiral";
+	//document.getElementById("obrazek").style.animationDuration = "4s";	
+	//document.getElementById("obrazek").style.animationDelay = "1s";
+</script>
+</html>
