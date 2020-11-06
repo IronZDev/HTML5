@@ -1,0 +1,28 @@
+<html>
+<img id="obrazek" style="top: 0px; left: 0px; width: 70%; height: 70%"  src="kaczko.jpg">
+<button onclick='moveme();'>click me</button>
+<style>
+	@keyframes spiral {
+		from {
+			transform: rotate(0deg) 
+		}
+		to {
+			transform: rotate(720deg) translate(calc(50vw - 256px), calc(50vh - 160px))
+		}
+	}
+</style>
+<script>
+function moveme()
+{
+	document.getElementById("obrazek").style.position = "absolute";
+	document.getElementById("obrazek").style.transition ="width 1s ease-in-out, height 1s ease-in-out, transform 4s linear 1s"
+	document.getElementById("obrazek").style.width = `25%`;
+	document.getElementById("obrazek").style.height = `25%`;
+	document.getElementById("obrazek").style.transformOrigin = `${window.innerWidth/2}px ${window.innerHeight/2}px`;
+	document.getElementById("obrazek").style.transform = `rotate(720deg) translate(${window.innerWidth/2-document.getElementById("obrazek").clientWidth/2*(0.25/0.7)}px, ${window.innerHeight/2-document.getElementById("obrazek").clientHeight/2*(0.25/0.7)}px)`;
+	//document.getElementById("obrazek").style.animationName = "spiral";
+	//document.getElementById("obrazek").style.animationDuration = "4s";	
+	//document.getElementById("obrazek").style.animationDelay = "1s";	
+}
+</script>
+</html>

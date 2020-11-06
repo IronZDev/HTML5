@@ -1,0 +1,20 @@
+<html>
+<img id="obrazek" style="top: 0px; left: 0px; width: 70%; height: 70%"  src="kaczko.jpg">
+<button onclick='moveme();'>click me</button>
+<script>
+function moveme()
+{
+	document.getElementById("obrazek").style.position = "absolute";
+	document.getElementById("obrazek").style.transition ="transform 2s ease-in-out 1s, width 1s ease-in-out 3s, height 1s ease-in-out 3s, margin-left 1s ease-in-out 3s, margin-top 1s ease-in-out 3s, left 1s ease-in-out, top 1s ease-in-out"
+	document.getElementById("obrazek").style.left = `${window.innerWidth-document.getElementById("obrazek").clientWidth}px`;
+	document.getElementById("obrazek").style.top = `${window.innerHeight-document.getElementById("obrazek").clientHeight}px`;
+	document.getElementById("obrazek").style.right = "0px";
+	document.getElementById("obrazek").style.transform = `translate(-${window.innerWidth/2-document.getElementById("obrazek").clientWidth/2}px, -${window.innerHeight/2-document.getElementById("obrazek").clientHeight/2}px) rotateY(720deg)`;
+	document.getElementById("obrazek").style.width = `100%`;
+	document.getElementById("obrazek").style.height = `100%`;
+	document.getElementById("obrazek").style.marginLeft = `-${window.innerWidth/2-document.getElementById("obrazek").clientWidth/2}px`;
+	document.getElementById("obrazek").style.marginTop = `-${window.innerHeight/2-document.getElementById("obrazek").clientHeight/2}px`;
+	document.getElementById("obrazek").style.height = `100%`;
+}
+</script>
+</html>

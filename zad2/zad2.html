@@ -1,0 +1,15 @@
+<html>
+<img id="obrazek" src="obrazek.jpg">
+<button onclick='moveme();'>click me</button>
+<script>
+function moveme()
+{
+	document.getElementById("obrazek").style.width = `${document.getElementById("obrazek").clientWidth}`;
+	document.getElementById("obrazek").style.transition ="transform 3s ease-in-out 3s, margin-left 1s ease-in-out 0s, margin-top 1s ease-in-out 0s, width 1s ease-in-out 1s"
+	document.getElementById("obrazek").style.marginLeft = `${window.innerWidth/2-document.getElementById("obrazek").clientWidth/2}px`;
+	document.getElementById("obrazek").style.marginTop = `${window.innerHeight/2-document.getElementById("obrazek").clientHeight/2}px`;
+	document.getElementById("obrazek").style.width = `${document.getElementById("obrazek").clientWidth/2}`;
+	document.getElementById("obrazek").style.transform = "rotateZ(180deg) rotateZ(180deg)"
+}
+</script>
+</html>
