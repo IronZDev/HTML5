@@ -2,6 +2,9 @@
 <div id="pilka" class="circle"></div>
 <button onclick='moveme();'>click me</button>
 <style>
+    :root {
+        --imageWidth: 1100px;
+    }
     body {
         background-image: url('wir.jpeg');
         background-repeat: no-repeat;
@@ -15,12 +18,21 @@
         border-radius: 50%;
     }
 	@keyframes spiral {
-		from {
-			transform: rotate(0deg) 
+        0%{
+            transform:rotate(0);
+        }
+        25%{
+            transform: rotate(360deg) translate(calc(var(--imageWidth)/6*1px), 0px);
 		}
-		to {
-			transform: rotate(720deg) translate(calc(50vw - 256px), calc(50vh - 160px))
-		}
+        50%{
+            transform: rotate(720deg) translate(calc(var(--imageWidth)/6*1.5px), 0px);
+        }
+        75% {
+            transform: rotate(1080deg) translate(calc(var(--imageWidth)/6*2.25px), 0px);
+        }
+        100% {
+            transform: rotate(2160deg) translate(calc(var(--imageWidth)/2*1px), 0px);
+        }
 	}
 </style>
 <script>
@@ -30,15 +42,17 @@
         const IMAGE_HEIGHT = 880;
         const current_height = window.innerHeight;
         const current_width = IMAGE_WIDTH * current_height / IMAGE_HEIGHT;
+        document.documentElement.style.setProperty('--imageWidth', current_width);
         document.getElementById("pilka").style.position = "absolute";
-        document.getElementById("pilka").style.left = `${window.innerWidth / 2 - current_width / 2 - 25}`;
-        document.getElementById("pilka").style.top = `${current_height / 2 - 25}`;
-        document.getElementById("pilka").style.transformOrigin = `${window.innerWidth/2 - 25}px ${window.innerHeight/2 - 25}px`;
-        document.getElementById("pilka").style.transition = "transform 4s linear 1s";
-        document.getElementById("pilka").style.transform = `rotate(30deg) translate(-125px, -125px)`;
-        //document.getElementById("obrazek").style.animationName = "spiral";
-        //document.getElementById("obrazek").style.animationDuration = "4s";
-        //document.getElementById("obrazek").style.animationDelay = "1s";
+        //document.getElementById("pilka").style.left = `${window.innerWidth / 2 - current_width / 2 - 25}`;
+        //document.getElementById("pilka").style.top = `${current_height / 2 - 25}`;
+        document.getElementById("pilka").style.left = `${window.innerWidth/2 - 25 - current_width/2}px`;
+        document.getElementById("pilka").style.top = `${window.innerHeight/2 - 25}px`;
+        document.getElementById("pilka").style.transformOrigin = `${current_width/2+25}px 25px`;
+        document.getElementById("pilka").style.animationName = "spiral";
+        document.getElementById("pilka").style.animationTimingFunction = "linear";
+        document.getElementById("pilka").style.animationDuration = "10s";
+        document.getElementById("pilka").style.animationDelay = "0s";
     }
 </script>
 </html>
