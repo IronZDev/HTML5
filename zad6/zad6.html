@@ -24,27 +24,27 @@
             animation-timing-function: linear
         }
         17% {
-            transform:translateY(calc(50vh - 40px));
+            transform: translateY(calc(50vh - 40px));
             animation-timing-function: ease-out
         }
-        50% {
+        34% {
             transform:translateY(calc(10vh - 40px));
             animation-timing-function: ease-in
         }
-        75% {
+        48% {
             transform:translateY(calc(50vh - 40px));
             animation-timing-function: ease-out
         }
-        100% {
+        65% {
             transform:translateY(calc(20vh - 40px));
             animation-timing-function: ease-in
         }
-        75% {
+        82% {
             transform:translateY(calc(50vh - 40px));
             animation-timing-function: ease-out
         }
         100% {
-            transform:translateY(calc(20vh - 40px));
+            transform:translateY(calc(30vh - 40px));
             animation-timing-function: ease-in
         }
         /*44%{*/
@@ -93,7 +93,7 @@
         }
         document.documentElement.style.setProperty('--imageWidth', current_width);
         document.getElementById("pilka").style.position = "absolute";
-        document.getElementById("pilka").style.left = `${window.innerWidth/2 - 25 - current_width*4/6}px`;
+        document.getElementById("pilka").style.left = `0px`;
         document.getElementById("pilka").style.top = `${window.innerHeight/2 - 25}px`;
         document.getElementById("pilka").style.animationName = "spiral";
         document.getElementById("pilka").style.animationTimingFunction = "linear";
