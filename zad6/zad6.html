@@ -1,5 +1,7 @@
 <html>
+<div id="verticalMover">
 <div id="pilka" class="circle"></div>
+</div>
 <button onclick='moveme();'>click me</button>
 <div class="square"></div>
 <style>
@@ -92,9 +94,12 @@
             current_height = IMAGE_HEIGHT * current_width / IMAGE_WIDTH;
         }
         document.documentElement.style.setProperty('--imageWidth', current_width);
+        document.getElementById("verticalMover").style.position = "absolute";
+        document.getElementById("verticalMover").style.left = `-50px`;
         document.getElementById("pilka").style.position = "absolute";
-        document.getElementById("pilka").style.left = `0px`;
-        document.getElementById("pilka").style.top = `${window.innerHeight/2 - 25}px`;
+        document.getElementById("verticalMover").style.top = `${window.innerHeight/2 - 25}px`;
+        document.getElementById("verticalMover").style.transition ="transform 10s linear"
+        document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth + 50}px)`;
         document.getElementById("pilka").style.animationName = "spiral";
         document.getElementById("pilka").style.animationTimingFunction = "linear";
         document.getElementById("pilka").style.animationDuration = "10s";
