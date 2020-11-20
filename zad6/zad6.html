@@ -1,0 +1,104 @@
+<html>
+<div id="pilka" class="circle"></div>
+<button onclick='moveme();'>click me</button>
+<div class="square"></div>
+<style>
+    #pilka {
+        background: #f00;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .square {
+        background-color: chartreuse;
+        /*border: 5px solid red;*/
+        width: 100%;
+        height: 15px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+    @keyframes spiral {
+        0% {
+            transform:translate(0px);
+            animation-timing-function: linear
+        }
+        17% {
+            transform:translateY(calc(50vh - 40px));
+            animation-timing-function: ease-out
+        }
+        50% {
+            transform:translateY(calc(10vh - 40px));
+            animation-timing-function: ease-in
+        }
+        75% {
+            transform:translateY(calc(50vh - 40px));
+            animation-timing-function: ease-out
+        }
+        100% {
+            transform:translateY(calc(20vh - 40px));
+            animation-timing-function: ease-in
+        }
+        75% {
+            transform:translateY(calc(50vh - 40px));
+            animation-timing-function: ease-out
+        }
+        100% {
+            transform:translateY(calc(20vh - 40px));
+            animation-timing-function: ease-in
+        }
+        /*44%{*/
+        /*    transform: rotate(360deg) translate(calc(var(--imageWidth)/6*1.9px), 0px);*/
+        /*    animation-timing-function: cubic-bezier(0.42, 0.35, 1, 1);*/
+        /*}*/
+        /*68%{*/
+        /*    transform: rotate(720deg) translate(calc(var(--imageWidth)/6*2.65px), 0px);*/
+        /*    animation-timing-function: cubic-bezier(0.42, 0.25, 1, 1);*/
+        /*}*/
+        /*81% {*/
+        /*    transform: rotate(1080deg) translate(calc(var(--imageWidth)/6*3.25px), 0px);*/
+        /*    animation-timing-function: cubic-bezier(0.42, 0.25, 1, 1);*/
+        /*}*/
+        /*88% {*/
+        /*    transform: rotate(1440deg) translate(calc(var(--imageWidth)/6*3.55px), 0px);*/
+        /*    animation-timing-function: cubic-bezier(0.42, 0.25, 1, 1);*/
+        /*}*/
+        /*92% {*/
+        /*    transform: rotate(1800deg) translate(calc(var(--imageWidth)/6*3.75px), 0px);*/
+        /*    animation-timing-function: cubic-bezier(0.42, 0.25, 1, 1);*/
+        /*}*/
+        /*100% {*/
+        /*    transform: rotate(2860deg) translate(calc(var(--imageWidth)/6*4px), 0px);*/
+        /*    animation-timing-function: cubic-bezier(0.42, 0.25, 1, 1);*/
+        /*}*/
+    }
+
+    /*.square:after {*/
+    /*    content: "";*/
+    /*    display: block;*/
+    /*}*/
+</style>
+<script>
+    function moveme() {
+        // Set initial position
+        const IMAGE_WIDTH = 1100;
+        const IMAGE_HEIGHT = 880;
+        let current_height, current_width;
+        if (window.innerHeight < window.innerWidth) {
+            current_height = window.innerHeight;
+            current_width = IMAGE_WIDTH * current_height / IMAGE_HEIGHT;
+        } else {
+            current_width = window.innerWidth;
+            current_height = IMAGE_HEIGHT * current_width / IMAGE_WIDTH;
+        }
+        document.documentElement.style.setProperty('--imageWidth', current_width);
+        document.getElementById("pilka").style.position = "absolute";
+        document.getElementById("pilka").style.left = `${window.innerWidth/2 - 25 - current_width*4/6}px`;
+        document.getElementById("pilka").style.top = `${window.innerHeight/2 - 25}px`;
+        document.getElementById("pilka").style.animationName = "spiral";
+        document.getElementById("pilka").style.animationTimingFunction = "linear";
+        document.getElementById("pilka").style.animationDuration = "10s";
+        document.getElementById("pilka").style.animationDelay = "0s";
+    }
+</script>
+</html>
