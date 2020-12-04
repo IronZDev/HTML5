@@ -3,9 +3,9 @@
     <div id="pilka" class="circle"></div>
 </div>
 <button onclick='moveme();'>click me</button>
-<div id="bat" class="bat"></div>
 <div class="player"></div>
 <div class="square"></div>
+<div id="bat" class="bat"></div>
 <style>
     #pilka {
         background: #f00;
@@ -34,11 +34,11 @@
     .bat {
         background-color: saddlebrown;
         /*border: 5px solid red;*/
-        width: 1vw;
-        height: 20vh;
+        width: 10vw;
+        height: 1vh;
         position: fixed;
-        bottom: -1vw;
-        left: calc(58vw - 6vh);
+        bottom: 0;
+        left: calc(56vw);
     }
     @keyframes ball-vertical {
         0% {
@@ -55,8 +55,12 @@
             transform:translate(0px);
             /*animation-timing-function: ease-in;*/
         }
-        100% {
+        50% {
             transform:translateX(calc(50vw));
+            /*animation-timing-function: ease-in;*/
+        }
+        100% {
+            transform:translateX(calc(-75vw));
             /*animation-timing-function: ease-in;*/
         }
     }
@@ -71,9 +75,11 @@
         // Set ball-horizontal anim
         document.getElementById("horizontalMover").style.animationName = "ball-horizontal";
         document.getElementById("horizontalMover").style.animationTimingFunction = "linear";
-        document.getElementById("horizontalMover").style.animationDuration = "5s";
+        document.getElementById("horizontalMover").style.animationDuration = "10s";
         document.getElementById("horizontalMover").style.animationDelay = "0s";
-        document.getElementById("bat").style.transform = "rotate(45deg)";
+        document.getElementById("bat").style.transformOrigin = "left";
+        document.getElementById("bat").style.transform = "rotate(-75deg)";
+        document.getElementById("bat").style.transition = "transform 1s ease-in 4s";
         // document.getElementById("verticalMover").style.transition ="transform 5s linear"
         // document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
         document.getElementById("pilka").style.animationName = "ball-vertical";
