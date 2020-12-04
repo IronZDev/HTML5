@@ -3,6 +3,7 @@
 <div id="pilka" class="circle"></div>
 </div>
 <button onclick='moveme();'>click me</button>
+<div class="player"></div>
 <div class="square"></div>
 <style>
     #pilka {
@@ -19,6 +20,15 @@
         position: fixed;
         bottom: 0;
         left: 0;
+    }
+    .player {
+        background-color: black;
+        /*border: 5px solid red;*/
+        width: 5vw;
+        height: 30vh;
+        position: fixed;
+        bottom: 0;
+        left: 5vw;
     }
     @keyframes spiral {
         0% {
