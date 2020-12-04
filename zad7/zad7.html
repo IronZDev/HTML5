@@ -35,10 +35,10 @@
         background-color: saddlebrown;
         /*border: 5px solid red;*/
         width: 1vw;
-        height: 15vh;
+        height: 20vh;
         position: fixed;
-        bottom: 0;
-        left: 58vw;
+        bottom: -1vw;
+        left: calc(58vw - 6vh);
     }
     @keyframes ball-vertical {
         0% {
@@ -73,7 +73,7 @@
         document.getElementById("horizontalMover").style.animationTimingFunction = "linear";
         document.getElementById("horizontalMover").style.animationDuration = "5s";
         document.getElementById("horizontalMover").style.animationDelay = "0s";
-        // document.getElementById("id").style.animationDelay = "0s";
+        document.getElementById("bat").style.transform = "rotate(45deg)";
         // document.getElementById("verticalMover").style.transition ="transform 5s linear"
         // document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
         document.getElementById("pilka").style.animationName = "ball-vertical";
