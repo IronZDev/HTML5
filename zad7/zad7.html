@@ -1,9 +1,9 @@
 <html>
-<div id="verticalMover">
-<div id="pilka" class="circle"></div>
+<div id="horizontalMover">
+    <div id="pilka" class="circle"></div>
 </div>
 <button onclick='moveme();'>click me</button>
-<div class="bat"></div>
+<div id="bat" class="bat"></div>
 <div class="player"></div>
 <div class="square"></div>
 <style>
@@ -35,7 +35,7 @@
         background-color: saddlebrown;
         /*border: 5px solid red;*/
         width: 1vw;
-        height: 20vh;
+        height: 15vh;
         position: fixed;
         bottom: 0;
         left: 58vw;
@@ -64,25 +64,16 @@
 <script>
     function moveme() {
         // Set initial position
-        const IMAGE_WIDTH = 1100;
-        const IMAGE_HEIGHT = 880;
-        let current_height, current_width;
-        if (window.innerHeight < window.innerWidth) {
-            current_height = window.innerHeight;
-            current_width = IMAGE_WIDTH * current_height / IMAGE_HEIGHT;
-        } else {
-            current_width = window.innerWidth;
-            current_height = IMAGE_HEIGHT * current_width / IMAGE_WIDTH;
-        }
-        document.documentElement.style.setProperty('--imageWidth', current_width);
-        document.getElementById("verticalMover").style.position = "absolute";
+        document.getElementById("horizontalMover").style.position = "absolute";
         document.getElementById("pilka").style.position = "absolute";
-        document.getElementById("verticalMover").style.left = `7vw`;
-        document.getElementById("verticalMover").style.bottom = `25vh`;
-        document.getElementById("verticalMover").style.animationName = "ball-horizontal";
-        document.getElementById("verticalMover").style.animationTimingFunction = "linear";
-        document.getElementById("verticalMover").style.animationDuration = "5s";
-        document.getElementById("verticalMover").style.animationDelay = "0s";
+        document.getElementById("horizontalMover").style.left = `7vw`;
+        document.getElementById("horizontalMover").style.bottom = `25vh`;
+        // Set ball-horizontal anim
+        document.getElementById("horizontalMover").style.animationName = "ball-horizontal";
+        document.getElementById("horizontalMover").style.animationTimingFunction = "linear";
+        document.getElementById("horizontalMover").style.animationDuration = "5s";
+        document.getElementById("horizontalMover").style.animationDelay = "0s";
+        // document.getElementById("id").style.animationDelay = "0s";
         // document.getElementById("verticalMover").style.transition ="transform 5s linear"
         // document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
         document.getElementById("pilka").style.animationName = "ball-vertical";
