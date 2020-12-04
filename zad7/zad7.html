@@ -45,7 +45,7 @@
             transform:translate(0px);
             animation-timing-function: ease-in;
         }
-        44.5% {
+        38% {
             transform:translateY(calc(10vh));
             animation-timing-function: ease-out;
         }
@@ -79,16 +79,16 @@
         // Set ball-horizontal anim
         document.getElementById("horizontalMover").style.animationName = "ball-horizontal";
         document.getElementById("horizontalMover").style.animationTimingFunction = "linear";
-        document.getElementById("horizontalMover").style.animationDuration = "10s";
+        document.getElementById("horizontalMover").style.animationDuration = "5s";
         document.getElementById("horizontalMover").style.animationDelay = "0s";
         document.getElementById("bat").style.transformOrigin = "left";
         document.getElementById("bat").style.transform = "rotate(-75deg)";
-        document.getElementById("bat").style.transition = "transform 1s ease-in 4s";
+        document.getElementById("bat").style.transition = "transform 0.5s ease-in 2s";
         // document.getElementById("verticalMover").style.transition ="transform 5s linear"
         // document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
         document.getElementById("pilka").style.animationName = "ball-vertical";
         document.getElementById("pilka").style.animationTimingFunction = "ease-in";
-        document.getElementById("pilka").style.animationDuration = "9s";
+        document.getElementById("pilka").style.animationDuration = "4s";
         document.getElementById("pilka").style.animationDelay = "1s";
     }
 </script>
