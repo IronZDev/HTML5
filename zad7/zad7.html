@@ -43,11 +43,15 @@
     @keyframes ball-vertical {
         0% {
             transform:translate(0px);
-            /*animation-timing-function: ease-in;*/
+            animation-timing-function: ease-in;
+        }
+        44.5% {
+            transform:translateY(calc(10vh));
+            animation-timing-function: ease-out;
         }
         100% {
-            transform:translateY(calc(10vh));
-            /*animation-timing-function: ease-in;*/
+            transform:translateY(calc(-20vh));
+            animation-timing-function: ease-out;
         }
     }
     @keyframes ball-horizontal {
@@ -84,7 +88,7 @@
         // document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
         document.getElementById("pilka").style.animationName = "ball-vertical";
         document.getElementById("pilka").style.animationTimingFunction = "ease-in";
-        document.getElementById("pilka").style.animationDuration = "4s";
+        document.getElementById("pilka").style.animationDuration = "9s";
         document.getElementById("pilka").style.animationDelay = "1s";
     }
 </script>
