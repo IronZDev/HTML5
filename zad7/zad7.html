@@ -30,14 +30,24 @@
         bottom: 0;
         left: 5vw;
     }
-    @keyframes ball {
+    @keyframes ball-vertical {
         0% {
             transform:translate(0px);
-            animation-timing-function: ease-in;
+            /*animation-timing-function: ease-in;*/
         }
         100% {
             transform:translateY(calc(10vh));
-            animation-timing-function: ease-in;
+            /*animation-timing-function: ease-in;*/
+        }
+    }
+    @keyframes ball-horizontal {
+        0% {
+            transform:translate(0px);
+            /*animation-timing-function: ease-in;*/
+        }
+        100% {
+            transform:translateX(calc(50vw));
+            /*animation-timing-function: ease-in;*/
         }
     }
 </style>
@@ -56,13 +66,17 @@
         }
         document.documentElement.style.setProperty('--imageWidth', current_width);
         document.getElementById("verticalMover").style.position = "absolute";
-        document.getElementById("verticalMover").style.left = `7vw`;
         document.getElementById("pilka").style.position = "absolute";
+        document.getElementById("verticalMover").style.left = `7vw`;
         document.getElementById("verticalMover").style.bottom = `25vh`;
-        document.getElementById("verticalMover").style.transition ="transform 5s linear"
-        document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
-        document.getElementById("pilka").style.animationName = "ball";
-        document.getElementById("pilka").style.animationTimingFunction = "linear";
+        document.getElementById("verticalMover").style.animationName = "ball-horizontal";
+        document.getElementById("verticalMover").style.animationTimingFunction = "linear";
+        document.getElementById("verticalMover").style.animationDuration = "5s";
+        document.getElementById("verticalMover").style.animationDelay = "0s";
+        // document.getElementById("verticalMover").style.transition ="transform 5s linear"
+        // document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
+        document.getElementById("pilka").style.animationName = "ball-vertical";
+        document.getElementById("pilka").style.animationTimingFunction = "ease-in";
         document.getElementById("pilka").style.animationDuration = "5s";
         document.getElementById("pilka").style.animationDelay = "0s";
     }
