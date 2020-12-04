@@ -23,11 +23,11 @@
     @keyframes spiral {
         0% {
             transform:translate(0px);
-            animation-timing-function: linear
+            animation-timing-function: ease-in;
         }
         100% {
             transform:translateY(calc(50vh));
-            animation-timing-function: ease-out
+            animation-timing-function: ease-in
         }
     }
 </style>
@@ -49,8 +49,8 @@
         document.getElementById("verticalMover").style.left = `-50px`;
         document.getElementById("pilka").style.position = "absolute";
         document.getElementById("verticalMover").style.top = `${window.innerHeight/2 - 25}px`;
-        document.getElementById("verticalMover").style.transition ="transform 5s ease-out"
-        document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth + 50}px)`;
+        document.getElementById("verticalMover").style.transition ="transform 5s"
+        document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
         document.getElementById("pilka").style.animationName = "spiral";
         document.getElementById("pilka").style.animationTimingFunction = "linear";
         document.getElementById("pilka").style.animationDuration = "5s";
