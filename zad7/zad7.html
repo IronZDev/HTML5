@@ -8,8 +8,8 @@
 <style>
     #pilka {
         background: #f00;
-        width: 50px;
-        height: 50px;
+        width: 1vw;
+        height: 1vw;
         border-radius: 50%;
     }
     .square {
@@ -30,14 +30,14 @@
         bottom: 0;
         left: 5vw;
     }
-    @keyframes spiral {
+    @keyframes ball {
         0% {
             transform:translate(0px);
             animation-timing-function: ease-in;
         }
         100% {
-            transform:translateY(calc(50vh));
-            animation-timing-function: ease-in
+            transform:translateY(calc(10vh));
+            animation-timing-function: ease-in;
         }
     }
 </style>
@@ -56,12 +56,12 @@
         }
         document.documentElement.style.setProperty('--imageWidth', current_width);
         document.getElementById("verticalMover").style.position = "absolute";
-        document.getElementById("verticalMover").style.left = `-50px`;
+        document.getElementById("verticalMover").style.left = `7vw`;
         document.getElementById("pilka").style.position = "absolute";
-        document.getElementById("verticalMover").style.top = `${window.innerHeight/2 - 25}px`;
-        document.getElementById("verticalMover").style.transition ="transform 5s"
+        document.getElementById("verticalMover").style.bottom = `25vh`;
+        document.getElementById("verticalMover").style.transition ="transform 5s linear"
         document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
-        document.getElementById("pilka").style.animationName = "spiral";
+        document.getElementById("pilka").style.animationName = "ball";
         document.getElementById("pilka").style.animationTimingFunction = "linear";
         document.getElementById("pilka").style.animationDuration = "5s";
         document.getElementById("pilka").style.animationDelay = "0s";
