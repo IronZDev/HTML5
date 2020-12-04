@@ -34,11 +34,11 @@
     .bat {
         background-color: saddlebrown;
         /*border: 5px solid red;*/
-        width: 10vw;
+        width: 15vh;
         height: 1vh;
         position: fixed;
         bottom: 0;
-        left: calc(56vw);
+        left: 56vw;
     }
     @keyframes ball-vertical {
         0% {
@@ -82,8 +82,8 @@
         document.getElementById("horizontalMover").style.animationDuration = "5s";
         document.getElementById("horizontalMover").style.animationDelay = "0s";
         document.getElementById("bat").style.transformOrigin = "left";
-        document.getElementById("bat").style.transform = "rotate(-75deg)";
-        document.getElementById("bat").style.transition = "transform 0.5s ease-in 2s";
+        document.getElementById("bat").style.transform = "rotate(-150deg)";
+        document.getElementById("bat").style.transition = "transform 1s ease-in-out 2s";
         // document.getElementById("verticalMover").style.transition ="transform 5s linear"
         // document.getElementById("verticalMover").style.transform = `translateX(${window.innerWidth/2}px)`;
         document.getElementById("pilka").style.animationName = "ball-vertical";
