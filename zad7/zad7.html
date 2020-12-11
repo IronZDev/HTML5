@@ -6,7 +6,8 @@
     <div id="horizontalMover">
         <div id="pilka" class="circle"></div>
     </div>
-    <button onclick='moveme();'>click me</button>
+    <button onclick='moveme();'>Basic ball movement</button>
+    <button onclick="movemerotated()">Ball movement with additional rotation</button>
     <div class="player"></div>
     <div class="square"></div>
     <div id="bat" class="bat"></div>
@@ -103,6 +104,9 @@
             document.getElementById("pilka").style.animationTimingFunction = "ease-in";
             document.getElementById("pilka").style.animationDuration = "2.5s";
             document.getElementById("pilka").style.animationDelay = "0s";
+        }
+        function movemerotated() {
+            
         }
     </script>
 </body>
