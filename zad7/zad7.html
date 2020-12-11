@@ -4,14 +4,16 @@
 </head>
 <body>
     <button onclick='moveme();'>Basic ball movement</button>
-    <button onclick="movemerotated()">Ball movement with additional rotation</button>
+    <button onclick="movemespin()">Ball movement with additional rotation</button>
     <div id="horizontalMover">
-        <div id="pilka" class="circle"></div>
+        <div id="ballSpinWrapper">
+            <div id="pilka" class="circle"></div>
+        </div>
     </div>
     <div class="player"></div>
     <div class="square"></div>
     <div id="bat" class="bat"></div>
-    <div id="version">v. 1.1</div>
+    <div id="version">v. 1.2</div>
     <style>
         #version {
             position: absolute;
@@ -51,6 +53,24 @@
             position: fixed;
             bottom: 0;
             left: 56vw;
+        }
+
+        @keyframes ball-spin {
+            0% {
+                transform:rotate(0deg) translateX(0px);
+            }
+            25% {
+                transform:rotate(180deg) translateX(1vw);
+            }
+            50% {
+                transform:rotate(0deg) translateX(0vw);
+            }
+            75% {
+                transform:rotate(180deg) translateX(1vw);
+            }
+            100% {
+                transform:rotate(0deg) translateX(0px);
+            }
         }
 
         @keyframes ball-vertical {
@@ -105,7 +125,7 @@
             document.getElementById("pilka").style.animationDuration = "2.5s";
             document.getElementById("pilka").style.animationDelay = "0s";
         }
-        function movemerotated() {
+        function movemespin() {
             // Set initial position
             document.getElementById("horizontalMover").style.position = "absolute";
             document.getElementById("pilka").style.position = "absolute";
@@ -125,6 +145,11 @@
             document.getElementById("pilka").style.animationTimingFunction = "ease-in";
             document.getElementById("pilka").style.animationDuration = "2.5s";
             document.getElementById("pilka").style.animationDelay = "0s";
+            // Ball spin
+            document.getElementById("ballSpinWrapper").style.animationName = "ball-spin";
+            document.getElementById("ballSpinWrapper").style.animationTimingFunction = "ease-in";
+            document.getElementById("ballSpinWrapper").style.animationDuration = "1.25s";
+            document.getElementById("ballSpinWrapper").style.animationDelay = "0s";
         }
     </script>
 </body>
