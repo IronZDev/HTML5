@@ -13,12 +13,14 @@
         right: 0;
         bottom: 0;
     }
+
     #pilka {
         background: #f00;
         width: 1vw;
         height: 1vw;
         border-radius: 50%;
     }
+
     .square {
         background-color: chartreuse;
         width: 100%;
@@ -27,6 +29,7 @@
         bottom: 0;
         left: 0;
     }
+
     .player {
         background-color: black;
         width: 5vw;
@@ -35,6 +38,7 @@
         bottom: 0;
         left: 5vw;
     }
+
     .bat {
         background-color: saddlebrown;
         width: 15vh;
@@ -43,31 +47,33 @@
         bottom: 0;
         left: 56vw;
     }
+
     @keyframes ball-vertical {
         0% {
-            transform:translate(0px);
+            transform: translate(0px);
             animation-timing-function: ease-in;
         }
         50% {
-            transform:translateY(calc(10vh));
+            transform: translateY(calc(10vh));
             animation-timing-function: ease-out;
         }
         100% {
-            transform:translateY(calc(-20vh));
+            transform: translateY(calc(-20vh));
             animation-timing-function: ease-out;
         }
     }
+
     @keyframes ball-horizontal {
         0% {
-            transform:translate(0px);
+            transform: translate(0px);
             animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
         }
         50% {
-            transform:translateX(calc(50vw));
+            transform: translateX(calc(50vw));
             animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
         }
         100% {
-            transform:translateX(calc(-75vw));
+            transform: translateX(calc(-75vw));
             animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
         }
     }
