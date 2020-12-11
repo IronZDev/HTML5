@@ -3,11 +3,11 @@
     <title>Palant animation</title>
 </head>
 <body>
+    <button onclick='moveme();'>Basic ball movement</button>
+    <button onclick="movemerotated()">Ball movement with additional rotation</button>
     <div id="horizontalMover">
         <div id="pilka" class="circle"></div>
     </div>
-    <button onclick='moveme();'>Basic ball movement</button>
-    <button onclick="movemerotated()">Ball movement with additional rotation</button>
     <div class="player"></div>
     <div class="square"></div>
     <div id="bat" class="bat"></div>
@@ -106,7 +106,25 @@
             document.getElementById("pilka").style.animationDelay = "0s";
         }
         function movemerotated() {
-            
+            // Set initial position
+            document.getElementById("horizontalMover").style.position = "absolute";
+            document.getElementById("pilka").style.position = "absolute";
+            document.getElementById("horizontalMover").style.left = `7vw`;
+            document.getElementById("horizontalMover").style.bottom = `25vh`;
+            // Set ball-horizontal anim
+            document.getElementById("horizontalMover").style.animationName = "ball-horizontal";
+            document.getElementById("horizontalMover").style.animationTimingFunction = "linear";
+            document.getElementById("horizontalMover").style.animationDuration = "2.5s";
+            document.getElementById("horizontalMover").style.animationDelay = "0s";
+            // Bat anim
+            document.getElementById("bat").style.transformOrigin = "left";
+            document.getElementById("bat").style.transform = "rotate(-150deg)";
+            document.getElementById("bat").style.transition = "transform 0.5s ease-in-out 1s";
+            // Ball anim
+            document.getElementById("pilka").style.animationName = "ball-vertical";
+            document.getElementById("pilka").style.animationTimingFunction = "ease-in";
+            document.getElementById("pilka").style.animationDuration = "2.5s";
+            document.getElementById("pilka").style.animationDelay = "0s";
         }
     </script>
 </body>
