@@ -60,16 +60,16 @@
                 transform:rotate(0deg) translateX(0px);
             }
             25% {
-                transform:rotate(180deg) translateX(1vw);
+                transform:rotate(360deg) translateX(-3vw);
             }
             50% {
-                transform:rotate(0deg) translateX(0vw);
+                transform:rotate(720deg) translateX(-2vw);
             }
             75% {
-                transform:rotate(180deg) translateX(1vw);
+                transform:rotate(1080deg) translateX(-1vw);
             }
             100% {
-                transform:rotate(0deg) translateX(0px);
+                transform:rotate(1440deg) translateX(0vw);
             }
         }
 
@@ -147,7 +147,7 @@
             document.getElementById("pilka").style.animationDelay = "0s";
             // Ball spin
             document.getElementById("ballSpinWrapper").style.animationName = "ball-spin";
-            document.getElementById("ballSpinWrapper").style.animationTimingFunction = "ease-in";
+            document.getElementById("ballSpinWrapper").style.animationTimingFunction = "linear";
             document.getElementById("ballSpinWrapper").style.animationDuration = "1.25s";
             document.getElementById("ballSpinWrapper").style.animationDelay = "0s";
         }
