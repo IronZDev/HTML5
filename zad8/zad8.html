@@ -10,7 +10,10 @@
             <div id="wheel2"></div>
             <div id="truckFront"></div>
             <div id="truck"></div>
-
+            <div id="truckDumper">
+                <div id="truckDumperBottom"></div>
+                <div id="truckDumperFront"></div>
+            </div>
         </div>
     </div>
     <div class="player"></div>
@@ -25,7 +28,7 @@
 
         #wheel1 {
             position:absolute;
-            background: #f00;
+            background: black;
             bottom: 0;
             left: 10vw;
             width: 1vw;
@@ -35,7 +38,7 @@
 
         #wheel2 {
             position: absolute;
-            background: #f00;
+            background: black;
             bottom: 0;
             left: 15vw;
             width: 1vw;
@@ -54,13 +57,39 @@
 
         #truckFront {
             background-color: darkred;
-            width: 5vw;
-            height: 25vh;
+            width: 2vw;
+            height: 3vw;
             position: absolute;
-            bottom: 0;
-            left: 5vw;
+            bottom: 1vw;
+            left: 15vw;
         }
 
+        #truckDumperBottom {
+            background-color: blue;
+            width: 5vw;
+            height: 0.2vw;
+            position: absolute;
+            bottom: 1.2vw;
+            left: 10vw;
+        }
+
+        #truckDumperFront {
+            background-color: blue;
+            width: 0.2vw;
+            height: 1.5vw;
+            position: absolute;
+            bottom: 1.2vw;
+            left: 14.8vw;
+        }
+
+        #cargo {
+            background-color: blue;
+            width: 0.2vw;
+            height: 1.5vw;
+            position: absolute;
+            bottom: 1.2vw;
+            left: 14.8vw;
+        }
 
         @keyframes ball-vertical {
             0% {
