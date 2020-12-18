@@ -104,7 +104,7 @@
                 /*animation-timing-function: ease-out;*/
             }
             100% {
-                transform: rotate(0deg);
+                transform: rotate(-90deg);
                 /*animation-timing-function: ease-out;*/
             }
         }
@@ -119,11 +119,11 @@
                 /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
             66% {
-                /*transform: translate(calc(70vw), calc(10vh));*/
+                transform: translate(calc(70vw), calc(0vh));
                 /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
             100% {
-                transform: translate(calc(60vw), calc(-60vh));
+                transform: translate(calc(70vw), calc(-60vh));
                 /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
         }
@@ -139,14 +139,14 @@
             document.getElementById("wholeTruckWrapper").style.animationDelay = "0s";
             document.getElementById("wholeTruckWrapper").style.animationFillMode = "forwards";
             // Truck rotation
-            document.getElementById("wholeTruck").style.transformOrigin = "-10vw -20vh";
-            document.getElementById("wholeTruck").style.transition ="transform 0.83s linear 0.83s"
-            document.getElementById("wholeTruck").style.transform = `rotateZ(-90deg)`;
-            // document.getElementById("wholeTruckWrapper").style.animationName = "truck";
-            // document.getElementById("wholeTruckWrapper").style.animationTimingFunction = "ease-in";
-            // document.getElementById("wholeTruckWrapper").style.animationDuration = "2.5s";
-            // document.getElementById("wholeTruckWrapper").style.animationDelay = "0s";
-            // document.getElementById("wholeTruckWrapper").style.animationFillMode = "forwards";
+            // document.getElementById("wholeTruck").style.transformOrigin = "-10vw -20vh";
+            // document.getElementById("wholeTruck").style.transition ="transform 0.83s linear 0.83s"
+            // document.getElementById("wholeTruck").style.transform = `rotateZ(-90deg)`;
+            document.getElementById("wholeTruck").style.animationName = "truck-rotation";
+            document.getElementById("wholeTruck").style.animationTimingFunction = "linear";
+            document.getElementById("wholeTruck").style.animationDuration = "2.5s";
+            document.getElementById("wholeTruck").style.animationDelay = "0s";
+            document.getElementById("wholeTruck").style.animationFillMode = "forwards";
             // document.getElementById("wholeTruckWrapper").style.transformOrigin = `60vw 98vh`;
         }
     </script>
