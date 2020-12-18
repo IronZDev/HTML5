@@ -119,11 +119,11 @@
                 /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
             66% {
-                transform: rotate(-90deg);
+                transform: translate(calc(85vw), calc(-10vh));
                 /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
             100% {
-                transform: translate(calc(50vw), calc(-75vh));
+                transform: translate(calc(85vw), calc(-60vh));
                 /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
         }
@@ -132,19 +132,22 @@
         function moveme() {
             // document.getElementById("wholeTruck").style.transition ="transform 5s ease-in-out"
             // document.getElementById("wholeTruck").style.transform = `translate(${window.innerWidth*3/4}px, -${window.innerHeight/2}px) rotateZ(-45deg)`;
-/*            // Truck anim
-            document.getElementById("wholeTruck").style.animationName = "truck";
-            document.getElementById("wholeTruck").style.animationTimingFunction = "ease-in";
-            document.getElementById("wholeTruck").style.animationDuration = "2.5s";
-            document.getElementById("wholeTruck").style.animationDelay = "0s";
-            document.getElementById("wholeTruck").style.animationFillMode = "forwards";*/
-            // Truck rotation
+            // Truck anim
             document.getElementById("wholeTruckWrapper").style.animationName = "truck";
-            document.getElementById("wholeTruckWrapper").style.animationTimingFunction = "ease-in";
+            document.getElementById("wholeTruckWrapper").style.animationTimingFunction = "linear";
             document.getElementById("wholeTruckWrapper").style.animationDuration = "2.5s";
             document.getElementById("wholeTruckWrapper").style.animationDelay = "0s";
             document.getElementById("wholeTruckWrapper").style.animationFillMode = "forwards";
-            document.getElementById("wholeTruckWrapper").style.transformOrigin = `60vw 98vh`;
+            // Truck rotation
+            // document.getElementById("wholeTruck").style.transformOrigin = "center";
+            document.getElementById("wholeTruck").style.transition ="transform 0.83s linear 0.83s"
+            document.getElementById("wholeTruck").style.transform = `rotateZ(-90deg)`;
+            // document.getElementById("wholeTruckWrapper").style.animationName = "truck";
+            // document.getElementById("wholeTruckWrapper").style.animationTimingFunction = "ease-in";
+            // document.getElementById("wholeTruckWrapper").style.animationDuration = "2.5s";
+            // document.getElementById("wholeTruckWrapper").style.animationDelay = "0s";
+            // document.getElementById("wholeTruckWrapper").style.animationFillMode = "forwards";
+            // document.getElementById("wholeTruckWrapper").style.transformOrigin = `60vw 98vh`;
         }
     </script>
 </body>
