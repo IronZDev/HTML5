@@ -14,6 +14,7 @@
                 <div id="truckDumperBottom"></div>
                 <div id="truckDumperFront"></div>
             </div>
+            <div id="cargo"></div>
         </div>
     </div>
     <div class="player"></div>
@@ -83,12 +84,12 @@
         }
 
         #cargo {
-            background-color: blue;
-            width: 0.2vw;
-            height: 1.5vw;
+            background-color: red;
+            width: 4vw;
+            height: 1vw;
             position: absolute;
-            bottom: 1.2vw;
-            left: 14.8vw;
+            bottom: 1.4vw;
+            left: 10.5vw;
         }
 
         @keyframes ball-vertical {
@@ -142,32 +143,6 @@
             document.getElementById("pilka").style.animationTimingFunction = "ease-in";
             document.getElementById("pilka").style.animationDuration = "2.5s";
             document.getElementById("pilka").style.animationDelay = "0s";
-        }
-        function movemespin() {
-            // Set initial position
-            document.getElementById("horizontalMover").style.position = "absolute";
-            document.getElementById("pilka").style.position = "absolute";
-            document.getElementById("horizontalMover").style.left = `7vw`;
-            document.getElementById("horizontalMover").style.bottom = `25vh`;
-            // Set ball-horizontal anim
-            document.getElementById("horizontalMover").style.animationName = "ball-horizontal";
-            document.getElementById("horizontalMover").style.animationTimingFunction = "linear";
-            document.getElementById("horizontalMover").style.animationDuration = "2.5s";
-            document.getElementById("horizontalMover").style.animationDelay = "0s";
-            // Bat anim
-            document.getElementById("bat").style.transformOrigin = "left";
-            document.getElementById("bat").style.transform = "rotate(-150deg)";
-            document.getElementById("bat").style.transition = "transform 0.5s ease-in-out 1s";
-            // Ball anim
-            document.getElementById("pilka").style.animationName = "ball-vertical";
-            document.getElementById("pilka").style.animationTimingFunction = "ease-in";
-            document.getElementById("pilka").style.animationDuration = "2.5s";
-            document.getElementById("pilka").style.animationDelay = "0s";
-            // Ball spin
-            document.getElementById("ballSpinWrapper").style.animationName = "ball-spin";
-            document.getElementById("ballSpinWrapper").style.animationTimingFunction = "linear";
-            document.getElementById("ballSpinWrapper").style.animationDuration = "1.25s";
-            document.getElementById("ballSpinWrapper").style.animationDelay = "0s";
         }
     </script>
 </body>
