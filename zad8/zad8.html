@@ -105,17 +105,21 @@
             }
         }
 
-        @keyframes truck-horizontal {
+        @keyframes truck {
             0% {
-                transform: translate(0px);
+                transform: translateX(0px);
                 animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
             }
-            50% {
-                transform: translateX(calc(50vw));
+            33% {
+                transform: translateX(calc(50vw)); rotate(0deg)
+                animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
+            }
+            66% {
+                transform: translate(calc(52vw), calc(2vh)); rotate(-5deg);
                 animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
             }
             100% {
-                transform: translateX(calc(-75vw));
+                transform: translate(calc(50vw), calc(-75vh));
                 animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
             }
         }
@@ -125,10 +129,11 @@
             // document.getElementById("wholeTruck").style.transition ="transform 5s ease-in-out"
             // document.getElementById("wholeTruck").style.transform = `translate(${window.innerWidth*3/4}px, -${window.innerHeight/2}px) rotateZ(-45deg)`;
             // Ball anim
-            document.getElementById("pilka").style.animationName = "ball-vertical";
-            document.getElementById("pilka").style.animationTimingFunction = "ease-in";
-            document.getElementById("pilka").style.animationDuration = "2.5s";
-            document.getElementById("pilka").style.animationDelay = "0s";
+            document.getElementById("wholeTruck").style.animationName = "truck";
+            document.getElementById("wholeTruck").style.animationTimingFunction = "ease-in";
+            document.getElementById("wholeTruck").style.animationDuration = "2.5s";
+            document.getElementById("wholeTruck").style.animationDelay = "0s";
+            document.getElementById("wholeTruck").style.animationFillMode = "forwards";
         }
     </script>
 </body>
