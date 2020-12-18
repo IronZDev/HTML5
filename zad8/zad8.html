@@ -4,7 +4,7 @@
 </head>
 <body>
     <button onclick='moveme();'>Move truck</button>
-    <div id="horizontalMover">
+    <div id="wholeTruckWrapper" style="position: absolute; bottom: 0; left: 5vw;">
         <div id="wholeTruck" style="position: absolute; bottom: 0; left: 5vw;">
             <div id="wheel1"></div>
             <div id="wheel2"></div>
@@ -90,37 +90,41 @@
             left: 10.5vw;
         }
 
-        @keyframes truck-vertical {
+        @keyframes truck-rotation {
             0% {
-                transform: translate(0px);
-                animation-timing-function: ease-in;
+                transform: rotate(0deg);
+                /*animation-timing-function: ease-in;*/
             }
-            50% {
-                transform: translateY(calc(10vh));
-                animation-timing-function: ease-out;
+            33% {
+                transform: rotate(0deg);
+                /*animation-timing-function: ease-out;*/
+            }
+            66% {
+                transform:  rotate(-90deg);
+                /*animation-timing-function: ease-out;*/
             }
             100% {
-                transform: translateY(calc(-20vh));
-                animation-timing-function: ease-out;
+                transform: rotate(0deg);
+                /*animation-timing-function: ease-out;*/
             }
         }
 
         @keyframes truck {
             0% {
                 transform: translateX(0px);
-                animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
             33% {
-                transform: translateX(calc(50vw)); rotate(0deg)
-                animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
+                transform: translateX(calc(50vw)); rotate(0deg);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
             66% {
-                transform: translate(calc(52vw), calc(2vh)); rotate(-5deg);
-                animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
+                transform: rotate(-90deg);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
             100% {
                 transform: translate(calc(50vw), calc(-75vh));
-                animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
         }
     </style>
@@ -128,12 +132,19 @@
         function moveme() {
             // document.getElementById("wholeTruck").style.transition ="transform 5s ease-in-out"
             // document.getElementById("wholeTruck").style.transform = `translate(${window.innerWidth*3/4}px, -${window.innerHeight/2}px) rotateZ(-45deg)`;
-            // Ball anim
+/*            // Truck anim
             document.getElementById("wholeTruck").style.animationName = "truck";
             document.getElementById("wholeTruck").style.animationTimingFunction = "ease-in";
             document.getElementById("wholeTruck").style.animationDuration = "2.5s";
             document.getElementById("wholeTruck").style.animationDelay = "0s";
-            document.getElementById("wholeTruck").style.animationFillMode = "forwards";
+            document.getElementById("wholeTruck").style.animationFillMode = "forwards";*/
+            // Truck rotation
+            document.getElementById("wholeTruckWrapper").style.animationName = "truck";
+            document.getElementById("wholeTruckWrapper").style.animationTimingFunction = "ease-in";
+            document.getElementById("wholeTruckWrapper").style.animationDuration = "2.5s";
+            document.getElementById("wholeTruckWrapper").style.animationDelay = "0s";
+            document.getElementById("wholeTruckWrapper").style.animationFillMode = "forwards";
+            document.getElementById("wholeTruckWrapper").style.transformOrigin = `60vw 98vh`;
         }
     </script>
 </body>
