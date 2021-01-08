@@ -168,6 +168,52 @@
                 /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
             }
         }
+
+        @keyframes dropOff {
+            0% {
+                /*left:10vw;*/
+                transform: translateX(0px);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
+            }
+            14% {
+                /*left:60vw;*/
+                transform: translateX(0px);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
+            }
+            28% {
+                /*left:60vw;*/
+                transform: translateX(0px);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
+            }
+            42% {
+                /*left:70vw;*/
+                transform: translateX(0px);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
+            }
+            58% {
+                /*left:70vw;*/
+                transform: translateX(0px);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
+            }
+            72% {
+                /*left:70vw;*/
+                transform: translateX(0px);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
+            }
+            79% {
+                transform: rotate(-45deg);
+            }
+            86% {
+                /*left:70vw;*/
+                transform: translateX(0px);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
+            }
+            100% {
+                /*left:70vw;*/
+                transform: translateX(0px);
+                /*animation-timing-function: cubic-bezier(0.25, 0.3, 1, 1);*/
+            }
+        }
     </style>
     <script>
         function moveme() {
@@ -188,6 +234,12 @@
             document.getElementById("wholeTruck").style.animationDuration = "2.5s";
             document.getElementById("wholeTruck").style.animationDelay = "0s";
             document.getElementById("wholeTruck").style.animationFillMode = "forwards";
+
+            document.getElementById("truckDumper").style.animationName = "dropOff";
+            document.getElementById("truckDumper").style.animationTimingFunction = "linear";
+            document.getElementById("truckDumper").style.animationDuration = "2.5s";
+            document.getElementById("truckDumper").style.animationDelay = "0s";
+            document.getElementById("truckDumper").style.animationFillMode = "forwards";
             // document.getElementById("wholeTruckWrapper").style.transformOrigin = `60vw 98vh`;
         }
     </script>
