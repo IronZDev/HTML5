@@ -8,7 +8,7 @@
         <li class="table" style="display:table; margin: 0 auto;">
             <ul style="list-style-type:none" class="container">
                 <li class="cn">
-                    <img style="top: auto; right: auto; left: auto; position: absolute;" src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal" id="product1">
+                    <img style="top:auto" src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal" id="product1">
                     <h3 class="horizontal">Glass 1</h3>
                     <button name="Add to cart" title="Add to cart" class="horizontal" onclick="buy('product1')">Add to cart</button>
                 </li>
@@ -52,6 +52,9 @@
         </li>
     </ul>
     <style>
+        img.horizontal {
+            position: absolute;
+        }
         #basket {
             position: absolute;
             right: 5vw;
@@ -72,14 +75,17 @@
             margin-left: 10vw;
         }
         @keyframes truck {
-            /*0% {*/
-            /*    !*left:10vw;*!*/
-            /*    transform: translateX(0px);*/
-            /*    top:auto;*/
-            /*}*/
-            100% {
-                /*right: 10vw;*/
+            0% {
+            }
+            75% {
+                left: 85vw;
                 top: 2vh;
+                /*transform: translate(90vw);*/
+                /*animation-timing-function: cubic-bezier(0.565, 0.315, 0.415, 0.750);*/
+            }
+            100% {
+                left: 90vw;
+                top: 10vh;
                 /*transform: translate(90vw);*/
                 /*animation-timing-function: cubic-bezier(0.565, 0.315, 0.415, 0.750);*/
             }
@@ -117,6 +123,10 @@
     </style>
     <script>
         function buy(productImageID) {
+            const boundingRect = document.getElementById(productImageID).getBoundingClientRect();
+            console.log(boundingRect.top);
+            document.getElementById(productImageID).style.top = `${boundingRect.top}px`;
+            document.getElementById(productImageID).style.left = `${boundingRect.left}px`;
             document.getElementById(productImageID).style.animationName = "truck";
             document.getElementById(productImageID).style.animationTimingFunction = "linear";
             document.getElementById(productImageID).style.animationDuration = "7s";
