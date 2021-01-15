@@ -3,12 +3,12 @@
     <title>Koszyk</title>
 </head>
 <body>
-    <img src="basket-transparent.png" alt="Basket" width="100vw" height="100vw" id="basket">
+
     <ul style="margin-top: 10vh; float:left">
         <li class="table" style="display:table; margin: 0 auto;">
             <ul style="list-style-type:none" class="container">
                 <li class="cn">
-                    <img style="top:auto" src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal" id="product1">
+                    <img style="top:auto" src="empty-glass.png" alt="Empty glass" width="100vw" height="100vw" class="horizontal" id="product1">
                     <h3 class="horizontal">Glass 1</h3>
                     <button name="Add to cart" title="Add to cart" class="horizontal" onclick="buy('product1')">Add to cart</button>
                 </li>
@@ -17,7 +17,7 @@
         <li class="table" style="display:table; margin: 0 auto;">
             <ul style="list-style-type:none" class="container">
                 <li class="cn">
-                    <img src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal" id="product2">
+                    <img src="empty-glass.png" alt="Empty glass" width="100vw" height="100vw" class="horizontal" id="product2">
                     <h3 class="horizontal">Glass 2</h3>
                     <button name="Add to cart" title="Add to cart" class="horizontal" onclick="buy('product2')">Add to cart</button>
                 </li>
@@ -26,7 +26,7 @@
         <li class="table" style="display:table; margin: 0 auto;">
             <ul style="list-style-type:none" class="container">
                 <li class="cn">
-                    <img src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal" id="product3">
+                    <img src="empty-glass.png" alt="Empty glass" width="100vw" height="100vw" class="horizontal" id="product3">
                     <h3 class="horizontal">Glass 3</h3>
                     <button name="Add to cart" title="Add to cart" class="horizontal" onclick="buy('product3')">Add to cart</button>
                 </li>
@@ -35,7 +35,7 @@
         <li class="table" style="display:table; margin: 0 auto;">
             <ul style="list-style-type:none" class="container">
                 <li class="cn">
-                    <img src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal" id="product4">
+                    <img src="empty-glass.png" alt="Empty glass" width="100vw" height="100vw" class="horizontal" id="product4">
                     <h3 class="horizontal">Glass 4</h3>
                     <button name="Add to cart" title="Add to cart" class="horizontal" onclick="buy('product4')">Add to cart</button>
                 </li>
@@ -44,13 +44,14 @@
         <li class="table" style="display:table; margin: 0 auto;">
             <ul style="list-style-type:none" class="container">
                 <li class="cn">
-                    <img src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal" id="product5">
+                    <img src="empty-glass.png" alt="Empty glass" width="100vw" height="100vw" class="horizontal" id="product5">
                     <h3 class="horizontal">Glass 5</h3>
                     <button name="Add to cart" title="Add to cart" class="horizontal" onclick="buy('product5')">Add to cart</button>
                 </li>
             </ul>
         </li>
     </ul>
+    <img src="basket-transparent.png" alt="Basket" width="100vw" height="100vw" id="basket">
     <style>
         img.horizontal {
             position: absolute;
@@ -74,16 +75,18 @@
             margin-right: 10vw;
             margin-left: 10vw;
         }
-        @keyframes truck {
+        @keyframes addToCart {
             0% {
             }
             75% {
+                transform: scale(0.5);
                 left: 85vw;
                 top: 2vh;
                 /*transform: translate(90vw);*/
                 /*animation-timing-function: cubic-bezier(0.565, 0.315, 0.415, 0.750);*/
             }
             100% {
+                transform: scale(0.5);
                 left: 90vw;
                 top: 10vh;
                 /*transform: translate(90vw);*/
@@ -127,7 +130,7 @@
             console.log(boundingRect.top);
             document.getElementById(productImageID).style.top = `${boundingRect.top}px`;
             document.getElementById(productImageID).style.left = `${boundingRect.left}px`;
-            document.getElementById(productImageID).style.animationName = "truck";
+            document.getElementById(productImageID).style.animationName = "addToCart";
             document.getElementById(productImageID).style.animationTimingFunction = "linear";
             document.getElementById(productImageID).style.animationDuration = "7s";
             document.getElementById(productImageID).style.animationDelay = "0s";
