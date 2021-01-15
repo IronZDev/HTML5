@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Koszyk</title>
+</head>
+<body>
+
+    <div id="version">v. 1.0</div>
+    <style>
+
+    </style>
+    <script>
+        function buy() {
+            document.getElementById("wholeTruck").style.transition ="transform 5s ease-in-out"
+            document.getElementById("wholeTruck").style.transform = `translate(${window.innerWidth*3/4}px, -${window.innerHeight/2}px) rotateZ(-45deg)`;
+            // Truck anim
+            document.getElementById("wholeTruckWrapper").style.animationName = "truck";
+            document.getElementById("wholeTruckWrapper").style.animationTimingFunction = "linear";
+            document.getElementById("wholeTruckWrapper").style.animationDuration = "7s";
+            document.getElementById("wholeTruckWrapper").style.animationDelay = "0s";
+            document.getElementById("wholeTruckWrapper").style.animationFillMode = "forwards";
+            // Truck rotation
+            document.getElementById("wholeTruck").style.transformOrigin = "3.5vw 4vw";
+            // document.getElementById("wholeTruck").style.transition ="transform 0.83s linear 0.83s"
+            // document.getElementById("wholeTruck").style.transform = `rotateZ(-90deg)`;
+            document.getElementById("wholeTruck").style.animationName = "truck-rotation";
+            document.getElementById("wholeTruck").style.animationTimingFunction = "linear";
+            document.getElementById("wholeTruck").style.animationDuration = "7s";
+            document.getElementById("wholeTruck").style.animationDelay = "0s";
+            document.getElementById("wholeTruck").style.animationFillMode = "forwards";
+
+            document.getElementById("truckDumper").style.animationName = "dropOff";
+            document.getElementById("truckDumper").style.animationTimingFunction = "linear";
+            document.getElementById("truckDumper").style.animationDuration = "7s";
+            document.getElementById("truckDumper").style.animationDelay = "0s";
+            document.getElementById("truckDumper").style.animationFillMode = "forwards";
+
+            document.getElementById("truckDumper").style.animationName = "dropOff";
+            document.getElementById("truckDumper").style.animationTimingFunction = "linear";
+            document.getElementById("truckDumper").style.animationDuration = "7s";
+            document.getElementById("truckDumper").style.animationDelay = "0s";
+            document.getElementById("truckDumper").style.animationFillMode = "forwards";
+
+            document.getElementById("cargo").style.animationName = "cargoAnim";
+            document.getElementById("cargo").style.animationTimingFunction = "linear";
+            document.getElementById("cargo").style.animationDuration = "7s";
+            document.getElementById("cargo").style.animationDelay = "0s";
+            document.getElementById("cargo").style.animationFillMode = "forwards";
+
+            document.getElementById("cargoRotator").transformOrigin = "left bottom";
+            document.getElementById("cargoRotator").style.animationName = "dropOff";
+            document.getElementById("cargoRotator").style.animationTimingFunction = "linear";
+            document.getElementById("cargoRotator").style.animationDuration = "7s";
+            document.getElementById("cargoRotator").style.animationDelay = "0s";
+            document.getElementById("cargoRotator").style.animationFillMode = "forwards";
+            // document.getElementById("wholeTruckWrapper").style.transformOrigin = `60vw 98vh`;
+        }
+    </script>
+</body>
+</html>
