@@ -3,17 +3,26 @@
     <title>Koszyk</title>
 </head>
 <body>
-    <ul style="list-style-type:none">
-        <li>
-            <div>
-                <img src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" style="float: left">
-                <h3 style="display: inline">Glass</h3>
-                <button name="Add to cart" title="Add to cart" style="display: inline-block"></button>
-            </div>
-        </li>
-    </ul>
+    <div class="table" style="display:table; margin: 0 auto;">
+        <ul style="list-style-type:none" class="container" id="horizontal-list">
+            <li class="cn">
+                <img src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal">
+                <h3 class="horizontal">Glass</h3>
+                <button name="Add to cart" title="Add to cart" class="horizontal">Add to cart</button>
+            </li>
+        </ul>
+    </div>
     <style>
-
+        .horizontal {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+        }
+        li.cn {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
     </style>
     <script>
         function buy() {
