@@ -8,7 +8,7 @@
         <li class="table" style="display:table; margin: 0 auto;">
             <ul style="list-style-type:none" class="container">
                 <li class="cn">
-                    <img src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal" id="product1">
+                    <img style="top: auto; right: auto; left: auto; position: absolute;" src="empty-glass.png" alt="Empty glass" width="60vw" height="60vw" class="horizontal" id="product1">
                     <h3 class="horizontal">Glass 1</h3>
                     <button name="Add to cart" title="Add to cart" class="horizontal" onclick="buy('product1')">Add to cart</button>
                 </li>
@@ -71,52 +71,56 @@
             margin-right: 10vw;
             margin-left: 10vw;
         }
+        @keyframes truck {
+            /*0% {*/
+            /*    !*left:10vw;*!*/
+            /*    transform: translateX(0px);*/
+            /*    top:auto;*/
+            /*}*/
+            100% {
+                /*right: 10vw;*/
+                top: 2vh;
+                /*transform: translate(90vw);*/
+                /*animation-timing-function: cubic-bezier(0.565, 0.315, 0.415, 0.750);*/
+            }
+            /*28% {*/
+            /*    !*left:60vw;*!*/
+            /*    transform: translate(calc(70vw), calc(-20vh));*/
+            /*    animation-timing-function: linear;*/
+            /*}*/
+            /*42% {*/
+            /*    !*left:70vw;*!*/
+            /*    transform: translate(calc(70vw), calc(-50vh));*/
+            /*    animation-timing-function: ease-out;*/
+            /*}*/
+            /*58% {*/
+            /*    !*left:70vw;*!*/
+            /*    transform: translate(calc(70vw), calc(-60vh));*/
+            /*    animation-timing-function: ease-in-out;*/
+            /*}*/
+            /*72% {*/
+            /*    !*left:70vw;*!*/
+            /*    transform: translate(calc(40vw), calc(-60vh));*/
+            /*    animation-timing-function: ease-in-out;*/
+            /*}*/
+            /*86% {*/
+            /*    !*left:70vw;*!*/
+            /*    transform: translate(calc(40vw), calc(-60vh));*/
+            /*    animation-timing-function: ease-in-out;*/
+            /*}*/
+            /*100% {*/
+            /*    !*left:70vw;*!*/
+            /*    transform: translate(calc(70vw), calc(-60vh));*/
+            /*    animation-timing-function: linear;*/
+            /*}*/
+        }
     </style>
     <script>
-        function buy() {
-            document.getElementById("wholeTruck").style.transition ="transform 5s ease-in-out"
-            document.getElementById("wholeTruck").style.transform = `translate(${window.innerWidth*3/4}px, -${window.innerHeight/2}px) rotateZ(-45deg)`;
-            // Truck anim
-            document.getElementById("wholeTruckWrapper").style.animationName = "truck";
-            document.getElementById("wholeTruckWrapper").style.animationTimingFunction = "linear";
-            document.getElementById("wholeTruckWrapper").style.animationDuration = "7s";
-            document.getElementById("wholeTruckWrapper").style.animationDelay = "0s";
-            document.getElementById("wholeTruckWrapper").style.animationFillMode = "forwards";
-            // Truck rotation
-            document.getElementById("wholeTruck").style.transformOrigin = "3.5vw 4vw";
-            // document.getElementById("wholeTruck").style.transition ="transform 0.83s linear 0.83s"
-            // document.getElementById("wholeTruck").style.transform = `rotateZ(-90deg)`;
-            document.getElementById("wholeTruck").style.animationName = "truck-rotation";
-            document.getElementById("wholeTruck").style.animationTimingFunction = "linear";
-            document.getElementById("wholeTruck").style.animationDuration = "7s";
-            document.getElementById("wholeTruck").style.animationDelay = "0s";
-            document.getElementById("wholeTruck").style.animationFillMode = "forwards";
-
-            document.getElementById("truckDumper").style.animationName = "dropOff";
-            document.getElementById("truckDumper").style.animationTimingFunction = "linear";
-            document.getElementById("truckDumper").style.animationDuration = "7s";
-            document.getElementById("truckDumper").style.animationDelay = "0s";
-            document.getElementById("truckDumper").style.animationFillMode = "forwards";
-
-            document.getElementById("truckDumper").style.animationName = "dropOff";
-            document.getElementById("truckDumper").style.animationTimingFunction = "linear";
-            document.getElementById("truckDumper").style.animationDuration = "7s";
-            document.getElementById("truckDumper").style.animationDelay = "0s";
-            document.getElementById("truckDumper").style.animationFillMode = "forwards";
-
-            document.getElementById("cargo").style.animationName = "cargoAnim";
-            document.getElementById("cargo").style.animationTimingFunction = "linear";
-            document.getElementById("cargo").style.animationDuration = "7s";
-            document.getElementById("cargo").style.animationDelay = "0s";
-            document.getElementById("cargo").style.animationFillMode = "forwards";
-
-            document.getElementById("cargoRotator").transformOrigin = "left bottom";
-            document.getElementById("cargoRotator").style.animationName = "dropOff";
-            document.getElementById("cargoRotator").style.animationTimingFunction = "linear";
-            document.getElementById("cargoRotator").style.animationDuration = "7s";
-            document.getElementById("cargoRotator").style.animationDelay = "0s";
-            document.getElementById("cargoRotator").style.animationFillMode = "forwards";
-            // document.getElementById("wholeTruckWrapper").style.transformOrigin = `60vw 98vh`;
+        function buy(productImageID) {
+            document.getElementById(productImageID).style.animationName = "truck";
+            document.getElementById(productImageID).style.animationTimingFunction = "linear";
+            document.getElementById(productImageID).style.animationDuration = "7s";
+            document.getElementById(productImageID).style.animationDelay = "0s";
         }
     </script>
 </body>
